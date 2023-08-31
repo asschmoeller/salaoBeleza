@@ -1,17 +1,18 @@
 package br.edu.univille.salaobeleza.entity;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity 
-public class Cliente{
+@Entity
+public class Servico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
-    private String telefone;
+    private double preco;
 
     public long getId() {
         return id;
@@ -25,10 +26,11 @@ public class Cliente{
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getTelefone() {
-        return telefone;
+    public double getPreco() {
+        return preco;
     }
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
+    
 }
