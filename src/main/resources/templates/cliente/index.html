@@ -14,9 +14,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Mariazinha</td>
-                        <td>4758584587458</td>
+                    <tr th:each="umCliente : ${listaClientes}">
+                        <td th:text="${umCliente.nome}"></td>
+                        <td th:text="${umCliente.telefone}">4758584587458</td>
                     </tr>
                 </tbody>
             </table>
