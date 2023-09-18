@@ -6,5 +6,7 @@ import br.edu.univille.salaobeleza.entity.Cliente;
 
 public interface ClienteService {
     List<Cliente> getAll();
-    
+
+    void save(Cliente cliente);
+
 }
