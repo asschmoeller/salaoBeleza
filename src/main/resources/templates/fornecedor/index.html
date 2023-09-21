@@ -4,8 +4,12 @@
     <body>
         <nav th:replace="layout :: menu">(menu)</nav>
         <main>
-            <h1>Fornecedores</h1>
+            <h1>Clientes</h1>
             <hr>
+
+            <a th:href="@{/fornecedores/novo}" class="btn btn-primary">Novo</a>
+
+
             <table class="table">
                 <thead>
                     <tr>
@@ -15,10 +19,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Lola Cosmetics</td>
-                        <td>Rua São Paulo 1000</td>
-                        <td>(47) 99999-9999</td>
+                    <tr th:each="umFornecedor : ${listaFornecedores}">
+                        <td th:text="${umFornecedor.nome}">Lola Comestics</td>
+                        <td th:text="${umFornecedor.endereco}">Rua Jaraguá 720</td>
+                        <td th:text="${umFornecedor.telefone}">47996562347</td>
+                        <td><a class= "btn btn-secondary"
+                            th:href="@{'/fornecedores/alterar/' + 
+                            ${umFornecedor.id}}">Alterar</a></td>
                     </tr>
                 </tbody>
             </table>
