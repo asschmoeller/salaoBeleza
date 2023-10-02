@@ -45,7 +45,13 @@ public class FornecedorController {
     public ModelAndView alterar(@PathVariable("id") Fornecedor fornecedor) {
         return new ModelAndView("fornecedor/form",
                 "fornecedor", fornecedor);
+    }
 
+    @GetMapping("remover/{id}")
+    public ModelAndView remover(
+        @PathVariable("id") Fornecedor fornecedor){  
+    service.delete(fornecedor);   
+    return new ModelAndView("fornecedor/form", "fornecedor", fornecedor);
     }
 
 }
