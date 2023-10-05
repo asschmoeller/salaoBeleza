@@ -14,6 +14,13 @@ public class Profissional{
     private String telefone;
     private String especializacao;
 
+    public long getid() {
+        return id;
+    }
+    public void setid(long id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -32,5 +39,4 @@ public class Profissional{
     public void setEspecializacao(String especializacao) {
         this.especializacao = especializacao;
     }
-
 }
