@@ -41,17 +41,17 @@ public class FornecedorController {
         return new ModelAndView("redirect:/fornecedores");
     }
 
-    @GetMapping("alterar/{id}")
+    @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") Fornecedor fornecedor) {
         return new ModelAndView("fornecedor/form",
                 "fornecedor", fornecedor);
     }
 
-    @GetMapping("remover/{id}")
+    @GetMapping("/remover/{id}")
     public ModelAndView remover(
         @PathVariable("id") Fornecedor fornecedor){  
     service.delete(fornecedor);   
-    return new ModelAndView("fornecedor/form", "fornecedor", fornecedor);
+    return new ModelAndView("redirect:/fornecedores");
     }
 
 }

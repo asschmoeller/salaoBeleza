@@ -12,8 +12,8 @@
             {
                 url: "/fornecedores/remover/" + id,
                 method: "GET",
-                sucess: function(){
-                    window.location.hre
+                success: function(){
+                    window.location.href = "/fornecedores"
                 }
             }
         );    
