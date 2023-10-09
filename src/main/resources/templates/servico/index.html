@@ -4,29 +4,27 @@
     <body>
         <nav th:replace="layout :: menu">(menu)</nav>
         <main>
-            <h1>Profissionais</h1>
+            <h1>Serviços</h1>
             <hr>
 
-            <a th:href="@{/profissionais/novo}" class="btn btn-primary">Novo</a>
+            <a th:href="@{/servicos/novo}" class="btn btn-primary">Novo</a>
 
 
-            <table class="table" id="tabprofissionais">
+            <table class="table" id="tabservicos">
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Telefone</th>
-                        <th>Especialização</th>
+                        <th>Preço</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="umProfissional : ${listaProfissionais}">
-                        <td th:text="${umProfissional.nome}"></td>
-                        <td th:text="${umProfissional.telefone}"></td>
-                        <td th:text="${umProfissional.especializacao}"></td>
-                        <td><a class="btn btn-secondary" th:href="@{'/profissionais/alterar/' + 
-                            ${umProfissional.id}}">Alterar</a>
+                    <tr th:each="umServico : ${listaServicos}">
+                        <td th:text="${umServico.nome}"></td>
+                        <td th:text="${umServico.preco}"></td>
+                        <td><a class="btn btn-secondary" th:href="@{'/servicos/alterar/' + 
+                            ${umServico.id}}">Alterar</a>
                             <button 
-                            th:data-id="${umProfissional.id}"
+                            th:data-id="${umServico.id}"
                             class="btn btn-danger js-delete">Excluir</button>
                         </td>
                             
@@ -34,15 +32,15 @@
                 </tbody>
             </table>
         </main>
-        <div class="modal" tabindex="-1" id="modalprofissional">
+        <div class="modal" tabindex="-1" id="modalservico">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Excluir Profissional</h5>
+                  <h5 class="modal-title">Excluir Serviço</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <p>Confirma a exclusão do profissional?</p>
+                  <p>Confirma a exclusão do serviço?</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>

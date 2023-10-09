@@ -1,19 +1,19 @@
 package br.edu.univille.salaobeleza.entity;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Profissional {
+public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
-    private String telefone;
-    private String especializacao;
+    private double preco;
+    private String descricao;
+    private String tipo;
 
     public long getId() {
         return id;
@@ -31,19 +31,27 @@ public class Profissional {
         this.nome = nome;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public double getPreco() {
+        return preco;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
-    public String getEspecializacao() {
-        return especializacao;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setEspecializacao(String especializacao) {
-        this.especializacao = especializacao;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }
