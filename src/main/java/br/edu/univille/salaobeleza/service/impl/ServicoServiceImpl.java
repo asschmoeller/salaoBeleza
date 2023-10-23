@@ -1,6 +1,6 @@
 package br.edu.univille.salaobeleza.service.impl;
 
-import br.edu.univille.salaobeleza.Repository.servicoRepository;
+import br.edu.univille.salaobeleza.Repository.ServicoRepository;
 import br.edu.univille.salaobeleza.entity.Servico;
 import br.edu.univille.salaobeleza.service.ServicoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.List;
 public class ServicoServiceImpl implements ServicoService {
 
     @Autowired
-    private servicoRepository repository;
+    private ServicoRepository repository;
 
     @Override
     public List<Servico> getAll() {

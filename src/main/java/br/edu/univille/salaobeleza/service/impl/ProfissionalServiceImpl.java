@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.univille.salaobeleza.Repository.profissionalRepository;
+import br.edu.univille.salaobeleza.Repository.ProfissionalRepository;
 import br.edu.univille.salaobeleza.entity.Profissional;
 import br.edu.univille.salaobeleza.service.ProfissionalService;
 
@@ -13,7 +13,7 @@ import br.edu.univille.salaobeleza.service.ProfissionalService;
 public class ProfissionalServiceImpl implements ProfissionalService {
 
     @Autowired
-    private profissionalRepository repository;
+    private ProfissionalRepository repository;
 
     @Override
     public List<Profissional> getAll() {

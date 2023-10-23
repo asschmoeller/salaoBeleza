@@ -14,7 +14,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity 
-public class agendamentoServico{
+public class AgendamentoServico{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

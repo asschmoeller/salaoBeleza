@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.edu.univille.salaobeleza.Repository.clienteRepository;
 import br.edu.univille.salaobeleza.entity.Profissional;
 import br.edu.univille.salaobeleza.service.ProfissionalService;
 

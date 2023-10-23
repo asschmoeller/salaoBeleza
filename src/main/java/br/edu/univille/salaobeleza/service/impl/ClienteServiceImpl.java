@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.univille.salaobeleza.Repository.clienteRepository;
+import br.edu.univille.salaobeleza.Repository.ClienteRepository;
 import br.edu.univille.salaobeleza.entity.Cliente;
 import br.edu.univille.salaobeleza.service.ClienteService;
 
@@ -13,7 +13,7 @@ import br.edu.univille.salaobeleza.service.ClienteService;
 public class ClienteServiceImpl implements ClienteService {
 
     @Autowired
-    private clienteRepository repository;
+    private ClienteRepository repository;
 
     @Override
     public List<Cliente> getAll() {

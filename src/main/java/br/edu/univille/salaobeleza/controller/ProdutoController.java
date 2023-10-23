@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.edu.univille.salaobeleza.Repository.produtoRepository;
+import br.edu.univille.salaobeleza.Repository.ProdutoRepository;
 import br.edu.univille.salaobeleza.entity.Produto;
 import br.edu.univille.salaobeleza.service.ProdutoService;
 
