@@ -45,4 +45,24 @@ public class AgendamentoServico{
     public void setData(Date data) {
         this.data = data;
     }
+    public Servico getServico() {
+        return servico;
+    }
+    public void setServico(Servico servico) {
+        this.servico = servico;
+    }
+    public Profissional getProfissional() {
+        return profissional;
+    }
+    public void setProfissional(Profissional profissional) {
+        this.profissional = profissional;
+    }
+    public Cliente getCliente() {
+        return cliente;
+    }
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    lang="pt-br">
+
+    <head th:include="layout :: htmlhead"></head>
+
+    <body>
+        <nav th:replace="layout :: menu">(menu)</nav>
+        <main class="container">
+            <form th:action="@{/agendamentoServico}"
+                method="POST"
+                th:object="${agendamentoservico}">
+
+                <input type="hidden" th:field="*{id}">
+
+                <div class="form-group">
+                    <label for="txtData">Data</label>
+                    <input type="date" class="form-control"
+                        th:field="*{data}" id="txtData">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtServico">Serviço</label>
+                    <select th:field="*{servico}">
+                        <option 
+                        th:each="umaServico : ${listaServico}" 
+                        th:value="${umaServico.id}" 
+                        th:text="${umaServico.nome}"></option>
+                    </select>
+                </div>
+
+                <!-- <div class="form-group">
+                    <label for="txtProfissional">Profissional</label>
+                    <select th:field="*{profissional}">
+                        <option 
+                        th:each="umaProfissional : ${listaProfissional}" 
+                        th:value="${umaProfissional.id}" 
+                        th:text="${umaProfissional.nome}"></option>
+                    </select>
+                </div> -->
+
+                <!-- <div class="form-group">
+                    <label for="txtCliente">Cliente</label>
+                    <select th:field="*{cliente}">
+                        <option 
+                        th:each="umaCliente : ${listaCliente}" 
+                        th:value="${umaCliente.id}" 
+                        th:text="${umaCliente.nome}"></option>
+                    </select>
+                </div> -->
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        Agendar
+                    </button>
+                </div>
+
+            </form>
+        </main>
+        <div th:include="layout :: footer">(footer)</div>
+    </body>
+</html>

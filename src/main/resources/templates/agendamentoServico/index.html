@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head th:include="layout :: htmlhead"></head>
+    <body>
+        <nav th:replace="layout :: menu">(menu)</nav>
+        <main>
+            <h1>HHHHHAgendamento Serviço</h1>
+            <hr>
+
+            <a th:href="@{/agendamentoservico/novo}" class="btn btn-primary">Novo</a>
+
+
+            <table class="table" id="tabagendamentoservico">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Serviço</th>
+                        <th>Profissional</th>
+                        <th>Cliente</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="umAgendamentoServico : ${listaAgendamentoServico}">
+                        <td th:text="${umAgendamentoServico.data}"></td>
+                        <td th:text="${umAgendamentoServico.Servico?.nome}"></td>
+                        <!-- <td th:text="${umAgendamentoServico.profissional?.nome}"></td>
+                        <td th:text="${umAgendamentoServico.cliente?.nome}"></td> -->
+                        <td><a class="btn btn-secondary" th:href="@{'/agendamentoservico/alterar/' + 
+                            ${umAgendamentoServico.id}}">Alterar</a>
+                            <button 
+                            th:data-id="${umAgendamentoServico.id}"
+                            class="btn btn-danger js-delete">Excluir</button>
+                        </td>
+                            
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+        <div class="modal" tabindex="-1" id="modalagendamentoservico">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Excluir Agendamento</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Confirma a exclusão do agendamento?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                  <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div th:include="layout :: footer">(footer)</div>
+        <script th:src="@{/AgendamentoServicoScript.js}"></script>
+    </body>
+</html>
