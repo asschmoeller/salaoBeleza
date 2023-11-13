@@ -3,6 +3,7 @@ package br.edu.univille.salaobeleza.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import br.edu.univille.salaobeleza.service.ProfissionalService;
 
 @Controller
 @RequestMapping("/profissionais")
+@PreAuthorize("hasAuthority('APPROLE_Admin')")
 public class ProfissionalController {
 
     @Autowired
