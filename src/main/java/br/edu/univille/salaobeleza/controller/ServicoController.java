@@ -3,6 +3,7 @@ package br.edu.univille.salaobeleza.controller;
 import br.edu.univille.salaobeleza.entity.Servico;
 import br.edu.univille.salaobeleza.service.ServicoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/servicos")
+@PreAuthorize("hasAuthority('APPROLE_Admin')")
+
 public class ServicoController {
 
     @Autowired

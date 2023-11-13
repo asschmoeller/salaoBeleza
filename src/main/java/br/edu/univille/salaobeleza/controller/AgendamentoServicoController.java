@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import br.edu.univille.salaobeleza.service.ServicoService;
 
 @Controller
 @RequestMapping("/agendamentoservico")
+@PreAuthorize("hasAuthority('APPROLE_Admin')")
 public class AgendamentoServicoController {
 
     @Autowired
