@@ -4,7 +4,7 @@
     <body>
         <nav th:replace="layout :: menu">(menu)</nav>
         <main>
-            <h1>HHHHHAgendamento Serviço</h1>
+            <h1>Agendamento Serviço</h1>
             <hr>
 
             <a th:href="@{/agendamentoservico/novo}" class="btn btn-primary">Novo</a>
@@ -23,8 +23,8 @@
                     <tr th:each="umAgendamentoServico : ${listaAgendamentoServico}">
                         <td th:text="${umAgendamentoServico.data}"></td>
                         <td th:text="${umAgendamentoServico.Servico?.nome}"></td>
-                        <!-- <td th:text="${umAgendamentoServico.profissional?.nome}"></td>
-                        <td th:text="${umAgendamentoServico.cliente?.nome}"></td> -->
+                        <td th:text="${umAgendamentoServico.Profissional?.nome}"></td>
+                        <td th:text="${umAgendamentoServico.cliente?.nome}"></td>
                         <td><a class="btn btn-secondary" th:href="@{'/agendamentoservico/alterar/' + 
                             ${umAgendamentoServico.id}}">Alterar</a>
                             <button 

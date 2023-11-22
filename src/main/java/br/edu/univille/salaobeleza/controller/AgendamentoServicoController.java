@@ -21,6 +21,8 @@ import org.springframework.web.servlet.ModelAndView;
 import br.edu.univille.salaobeleza.entity.AgendamentoServico;
 import br.edu.univille.salaobeleza.entity.Cliente;
 import br.edu.univille.salaobeleza.service.AgendamentoServicoService;
+import br.edu.univille.salaobeleza.service.ClienteService;
+import br.edu.univille.salaobeleza.service.ProfissionalService;
 import br.edu.univille.salaobeleza.service.ServicoService;
 import jakarta.validation.Valid;
 
@@ -33,13 +35,17 @@ public class AgendamentoServicoController {
     private AgendamentoServicoService service;
     @Autowired
     private ServicoService servicoService;
+    @Autowired
+    private ProfissionalService profissionalService;
+    @Autowired
+    private ClienteService clienteService;
 
     @GetMapping
     public ModelAndView index(){
 
         var listaAgendamentoServico = service.getAll();
         
-        return new ModelAndView("agendamentoServico/index","listaAgendamentoServico",listaAgendamentoServico);
+        return new ModelAndView("agendamentoservico/index","listaAgendamentoServico",listaAgendamentoServico);
     }
     @GetMapping("/paginacao")
     public ModelAndView indexPaging(@RequestParam(defaultValue = "1") int page, 
@@ -64,9 +70,13 @@ public class AgendamentoServicoController {
         HashMap<String,Object> dados = new HashMap<>();
         var novoAgendamentoServico = new AgendamentoServico();
         var listaServico = servicoService.getAll();
+        var listaProfissional = profissionalService.getAll();
+        var listaCliente = clienteService.getAll();
 
-        dados.put("agendamentoServico",novoAgendamentoServico);
+        dados.put("agendamentoservico",novoAgendamentoServico);
         dados.put("listaServico",listaServico);
+        dados.put("listaProfissional",listaProfissional);
+        dados.put("listaCliente",listaCliente);
 
         return new ModelAndView("agendamentoServico/form", dados);
     }
@@ -76,8 +86,12 @@ public class AgendamentoServicoController {
         if(bindingResult.hasErrors()){
             HashMap<String,Object> dados = new HashMap<>();
             var listaServico = servicoService.getAll();
-            dados.put("AgendamentoServico",agendamentoServico);
+            var listaProfissional = profissionalService.getAll();
+            var listaCliente = clienteService.getAll();
+            dados.put("agendamentoservico",agendamentoServico);
             dados.put("listaServico",listaServico);
+            dados.put("listaProfissional",listaProfissional);
+            dados.put("listaCliente",listaCliente);
             return new ModelAndView("agendamentoServico/form", dados);
         }
         service.save(agendamentoServico);
@@ -89,9 +103,12 @@ public class AgendamentoServicoController {
 
         HashMap<String,Object> dados = new HashMap<>();
         var listaServico = service.getAll();
+        var listaProfissional = service.getAll();
+        var listaCliente = clienteService.getAll();
         dados.put("agendamentoservico",agendamentoservico);
         dados.put("listaServicos",listaServico);
-        
+        dados.put("listaProfissional",listaProfissional);
+        dados.put("listaCliente",listaCliente);
 
         return new ModelAndView("agendamentoServico/form",dados);
     }

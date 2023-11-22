@@ -3,6 +3,7 @@ package br.edu.univille.salaobeleza.entity;
 import java.util.Date;
 
 import org.hibernate.annotations.Cascade;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -19,6 +20,7 @@ public class AgendamentoServico{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
 
     @ManyToOne (cascade = {CascadeType.MERGE,
