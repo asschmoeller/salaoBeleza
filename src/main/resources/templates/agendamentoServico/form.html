@@ -42,12 +42,12 @@
                     <div class="row">
                       <div class="col">
                         <div class="form-group">
-                            <label for="txtData"><b>PROFISSIONAL:</b></label>
+                            <label for="txtProfissional"><b>PROFISSIONAL:</b></label>
                             <select class="form-select" aria-label="Default select example" style="border: 1.2px solid; border-color: #4F2867" th:field="*{profissional}">
                                 <option
                                 th:each="umaProfissional : ${listaProfissional}" 
                                 th:value="${umaProfissional.id}" 
-                                th:text="${umaProfissional.nome}"></option>
+                                th:text="${umaProfissional.telefone}"></option>
                             </select>
                         </div>
                       </div>

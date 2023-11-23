@@ -102,8 +102,8 @@ public class AgendamentoServicoController {
     public ModelAndView alterar(@PathVariable("id") AgendamentoServico agendamentoservico){
 
         HashMap<String,Object> dados = new HashMap<>();
-        var listaServico = service.getAll();
-        var listaProfissional = service.getAll();
+        var listaServico = servicoService.getAll();
+        var listaProfissional = profissionalService.getAll();
         var listaCliente = clienteService.getAll();
         dados.put("agendamentoservico",agendamentoservico);
         dados.put("listaServicos",listaServico);
