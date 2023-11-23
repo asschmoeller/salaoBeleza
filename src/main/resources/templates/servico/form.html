@@ -12,25 +12,31 @@
                 th:object="${servico}">
 
                 <input type="hidden" th:field="*{id}">
-
-                <div class="form-group">
-                    <label for="txtNome">Nome</label>
-                    <input type="text" class="form-control"
-                        th:field="*{nome}" id="txtNome">
+                <br>
+                <div class="container text-left">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                            <label for="txtNome"><b>NOME:</b></label>
+                            <input type="text" class="form-control" style="border: 1.2px solid; border-color: #7D3C98;"
+                            th:field="*{nome}" id="txtNome">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                            <label for="txtPreco"><b>PREÇO:</b></label>
+                            <input type="text" class="form-control" style="border: 1.2px solid; border-color: #7D3C98;"
+                                th:field="*{preco}" id="txtPreco">
+                        </div>
+                      </div>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="txtPreco">Preço</label>
-                    <input type="text" class="form-control"
-                        th:field="*{preco}" id="txtPreco">
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">
-                        Enviar
+                <br>
+                <div class="container text-center">
+                    <button type="submit" class="btn btn-primary" style="background-color: #7D3C98; color: white; border-color: #7D3C98;">
+                        <b>Cadastrar Serviço</b>
                     </button>
                 </div>
-
             </form>
         </main>
         <div th:include="layout :: footer">(footer)</div>

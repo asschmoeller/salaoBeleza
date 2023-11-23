@@ -13,48 +13,64 @@
 
                 <input type="hidden" th:field="*{id}">
 
-                <div class="form-group">
-                    <label for="txtData">Data</label>
-                    <input type="date" class="form-control"
-                        th:field="*{data}" id="txtData">
+                <br>
+                <div class="container text-left">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                            <label for="txtData"><b>DATA:</b></label>
+                            <input type="date" class="form-control" style="border: 1.2px solid; border-color: #4F2867;"
+                            th:field="*{data}" id="txtData">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                            <label for="txtServico"><b>SERVIÇO:</b></label>
+                            <select class="form-select" aria-label="Default select example" style="border: 1.2px solid; border-color: #4F2867" th:field="*{servico}">
+                                <option
+                                th:each="umaServico : ${listaServico}" 
+                                th:value="${umaServico.id}" 
+                                th:text="${umaServico.nome}"></option>
+                            </select>
+                        </div>
+                      </div>
+                    </div>
                 </div>
+                <br>
 
-                <div class="form-group">
-                    <label for="txtServico">Serviço</label>
-                    <select th:field="*{servico}">
-                        <option 
-                        th:each="umaServico : ${listaServico}" 
-                        th:value="${umaServico.id}" 
-                        th:text="${umaServico.nome}"></option>
-                    </select>
+                <div class="container text-left">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                            <label for="txtData"><b>PROFISSIONAL:</b></label>
+                            <select class="form-select" aria-label="Default select example" style="border: 1.2px solid; border-color: #4F2867" th:field="*{profissional}">
+                                <option
+                                th:each="umaProfissional : ${listaProfissional}" 
+                                th:value="${umaProfissional.id}" 
+                                th:text="${umaProfissional.nome}"></option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                            <label for="txtServico"><b>CLIENTE:</b></label>
+                            <select class="form-select" aria-label="Default select example" style="border: 1.2px solid; border-color: #4F2867" th:field="*{cliente}">
+                                <option
+                                th:each="umaCliente : ${listaCliente}" 
+                                th:value="${umaCliente.id}" 
+                                th:text="${umaCliente.nome}"></option>
+                            </select>
+                        </div>
+                      </div>
+                    </div>
                 </div>
+                <br>
 
-                <div class="form-group">
-                    <label for="txtProfissional">Profissional</label>
-                    <select th:field="*{profissional}">
-                        <option 
-                        th:each="umaProfissional : ${listaProfissional}" 
-                        th:value="${umaProfissional.id}" 
-                        th:text="${umaProfissional.nome}"></option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="txtCliente">Cliente</label>
-                    <select th:field="*{cliente}">
-                        <option 
-                        th:each="umaCliente : ${listaCliente}" 
-                        th:value="${umaCliente.id}" 
-                        th:text="${umaCliente.nome}"></option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">
-                        Agendar
+                <div class="container text-center">
+                    <button type="submit" class="btn btn-primary" style="background-color: #4F2867; color: white; border-color: #4F2867;">
+                        <b>Agendar</b>
                     </button>
                 </div>
-
             </form>
         </main>
         <div th:include="layout :: footer">(footer)</div>
