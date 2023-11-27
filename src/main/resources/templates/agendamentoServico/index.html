@@ -4,10 +4,15 @@
     <body>
         <nav th:replace="layout :: menu">(menu)</nav>
         <main>
-            <h1>Agendamento Serviço</h1>
-            <hr>
+          <br>
+          <h1 style="font-size: 20px; color: #4F2867;">AGENDAMENTOS</h1>
+          <hr>
 
-            <a th:href="@{/agendamentoservico/novo}" class="btn btn-primary">Novo</a>
+            <a th:href="@{/agendamentoservico/novo}">
+              <button type="submit" class="btn btn-primary" style="background-color: #cbbfd2; color: black; border-color: #4F2867; margin-left: 5px;">
+                <b>Novo Agendamento</b>
+              </button>
+            </a>
 
 
             <table class="table" id="tabagendamentoservico">
@@ -25,11 +30,13 @@
                         <td th:text="${umAgendamentoServico.Servico?.nome}"></td>
                         <td th:text="${umAgendamentoServico.Profissional?.nome}"></td>
                         <td th:text="${umAgendamentoServico.cliente?.nome}"></td>
-                        <td><a class="btn btn-secondary" th:href="@{'/agendamentoservico/alterar/' + 
+                        <td><a class="btn btn-secondary" style="background-color: #cbbfd2; color: black; border-color: #4F2867;" th:href="@{'/agendamentoservico/alterar/' + 
                             ${umAgendamentoServico.id}}">Alterar</a>
-                            <button 
-                            th:data-id="${umAgendamentoServico.id}"
-                            class="btn btn-danger js-delete">Excluir</button>
+
+                          <button th:data-id="${umAgendamentoServico.id}" type="submit" class="btn btn-primary js-delete" style="background-color: #ebb7b7; color: black; border-color: #BB0F0F;">
+                            <b>Excluir</b>
+                          </button> 
+
                         </td>
                             
                     </tr>
@@ -48,7 +55,9 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                  <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+                  <button type="button" class="btn btn-primary" id="btnsim" style="background-color: #ebb7b7; color: black; border-color: #BB0F0F;">
+                    <b>Sim</b>
+                  </button>
                 </div>
               </div>
             </div>

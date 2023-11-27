@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head th:include="layout :: htmlhead"></head>
+  <body>
+    <nav th:replace="layout :: menu">(menu)</nav>
+    <main>
+      <br> <br> <br>  
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <a href="/fornecedores"><img src="calendar.png" style="max-width: 300px;"></a>
+          </div>
+          <div class="col">
+            <a href="/fornecedores"><img src="cadastroCliente.png" style="max-width: 300px;"></a>
+          </div>
+        </div>
+      </div>
+    <div th:include="layout :: footer">(footer)</div>
+  </body>
+</html>
