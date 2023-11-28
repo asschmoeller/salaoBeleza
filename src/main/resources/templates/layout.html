@@ -10,7 +10,7 @@
     <body> 
         <nav th:fragment="menu" class="navbar navbar-dark" style="background-color: #4F2867;">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">SALÃO DA JÔ</a>
+            <a class="navbar-brand" href="/">SALÃO DA JÔ</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,7 +22,13 @@
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/" style="color: black; font-weight: bold;">Home</a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/clientes" style="color: black; font-weight: bold;">Clientes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/agendamentoservico" style="color: black; font-weight: bold;">Agenda</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/produtos" style="color: black; font-weight: bold;">Produtos</a>
@@ -35,9 +41,6 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/fornecedores" style="color: black; font-weight: bold;">Fornecedores</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/agendamentoservico" style="color: black; font-weight: bold;">Agenda</a>
                   </li>
                 </ul>
               </div>
